@@ -1,0 +1,17 @@
+---
+import AposArea from '@apostrophecms/apostrophe-astro/components/AposArea.astro';
+
+const { page, piece } = Astro.props.aposData;
+const { main } = piece;
+---
+
+<section class="bp-content">
+    <h1>COUCOU SHOW</h1>
+
+    <h1>{ piece.name }</h1>
+    <h3>{ piece.season}</h3>
+        <h4>
+            { piece.description }
+        </h4>
+        <AposArea area={main} />
+</section>

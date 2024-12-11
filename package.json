@@ -1,0 +1,20 @@
+{
+  "name": "Astro-Project",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@apostrophecms/apostrophe-astro": "^1.1.0",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/node": "^8.3.4",
+    "astro": "^4.16.16",
+    "bootstrap": "^5.3.3",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.2"
+  }
+}
