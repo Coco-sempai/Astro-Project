@@ -1,16 +1,14 @@
 ---
-import AposArea from '@apostrophecms/apostrophe-astro/components/AposArea.astro';
 import Image from "../widgets/ImageWidget.astro";
 
 const { page, piece } = Astro.props.aposData;
 const { main } = piece;
-
 ---
 
 <section class="bp-content">
     <div class="mt-4 ms-4">
-        <h1 class="text-warning"><b><i> <a href="/tire" style="color: inherit;text-decoration: none;"><</a> { piece.name }</i></b></h1>
-        <small class="text-muted">{ piece.season}</small>
+        <h1 class="text-warning"><b><i> <a href="/rims" style="color: inherit;text-decoration: none;"><</a> { piece.name }</i></b></h1>
+        <small class="text-muted">{ piece.material}</small>
     </div>
     <Image widget={piece.photo.items[0]} />
     <div style="max-width: 90%" class="m-auto">

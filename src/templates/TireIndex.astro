@@ -1,21 +1,32 @@
 ---
+import Image from "../widgets/ImageWidget.astro"
 const { page, pieces } = Astro.props.aposData;
+const nbResults = pieces.length;
 ---
 
 <section class="bp-content">
-    <h1>{ page.title }</h1>
-    <h1>COUCOU INDEX</h1>
+    <div class="mt-4 ms-4">
+        <h1 style="color: #27509B"><b><i>Pneus</i></b></h1>
+        <small class="text-muted">{ nbResults > 1 ? "résultats" : "résultat" }</small>
+    </div>
 
-    <h2>Pneus</h2>
-
-    {pieces.map(piece => (
-            <h4>
-                { piece.name }
-            </h4>
-            <h3>
-                { piece.season }
-                <a href={ piece._url }>Voir les détails</a>
-            </h3>
-            <h4>{ piece.description }</h4>
-    ))}
+    <div class="row row-cols-1 row-cols-md-4 g-4 m-3">
+        {pieces.map(piece => (
+            <div class="col">
+                <div class="card h-100 border-warning text-dark bg-light mb-3">
+                    <Image class="card-img-top img-fluid" widget={piece.photo.items[0]} />
+                    <div class="card-body">
+                        <div>
+                            <h3 class="card-title text-warning"><b><i>{ piece.name }</i></b></h3>
+                            <p class="card-text"><small class="text-muted">{ piece.season }</small></p>
+                            <p class="card-text" style="font-weight: 500;">{ piece.description }</p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href={ piece._url } class="btn btn-warning btn-gradient">Voir les détails</a>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
 </section>
